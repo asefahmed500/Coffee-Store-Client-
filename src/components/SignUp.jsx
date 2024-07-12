@@ -13,17 +13,17 @@ const SignUp = () => {
         const password = form.password.value;
         
 
-        console.log(email, password);
+        // console.log(email, password);
 
         createUser(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
 
                 // new user created 
                 const createdAt = result.user?.metadata?.creationTime;
 
                 const user = { email , createdAt: createdAt };
-                fetch('http://localhost:5000/user', {
+                fetch('https://coffee-store-server-seven-lyart.vercel.app/user', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const SignUp = () => {
                         return res.json();
                     })
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                         if (data.insertedId) {
                             toast.success('Registration Successful!', {
                                 position: "top-right",

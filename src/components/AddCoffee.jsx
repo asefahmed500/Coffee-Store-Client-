@@ -15,10 +15,10 @@ const AddCoffee = () => {
       const photo = form.photo.value;
   
       const newcoffee = { name, quantity, supplier, taste, category, details, photo };
-      console.log(newcoffee);
+      // console.log(newcoffee);
   
       // Send coffee to server
-      fetch('http://localhost:5000/coffee', {
+      fetch('https://coffee-store-server-seven-lyart.vercel.app/coffee', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -32,7 +32,7 @@ const AddCoffee = () => {
         return res.json();
       })
       .then(data => {
-        console.log(data);
+        // console.log(data);
         if(data.insertedId){
             // alert("coffee added successfully ")
             Swal.fire({

@@ -14,18 +14,18 @@ const SignIn = () => {
         const email = form.email.value;
         const password = form.password.value;
         
-        console.log(email, password);
+        // console.log(email, password);
 
         loginuser(email, password)
             .then(result => {
-                console.log(result.user);
+                // console.log(result.user);
                 const user = {
                     email,
                     lastLoggedAt: result.user?.metadata?.lastSignInTime
 
                 };
                 
-                fetch(`http://localhost:5000/user`, {
+                fetch(`https://coffee-store-server-seven-lyart.vercel.app/user`, {
                     method: 'PATCH',
                     headers: {
                         'Content-Type': 'application/json'

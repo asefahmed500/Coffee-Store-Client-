@@ -19,10 +19,10 @@ const UpdateCoffee = () => {
         const photo = form.photo.value;
     
         const newcoffee = { name, quantity, supplier, taste, category, details, photo };
-        console.log(newcoffee);
+        // console.log(newcoffee);
     
         // Send coffee to server
-        fetch(`http://localhost:5000/coffee/${_id}`, {
+        fetch(`https://coffee-store-server-seven-lyart.vercel.app/coffee/${_id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ const UpdateCoffee = () => {
           return res.json();
         })
         .then(data => {
-          console.log(data);
+          // console.log(data);
           if(data.modifiedCount > 0){
               // alert("coffee added successfully ")
               Swal.fire({
