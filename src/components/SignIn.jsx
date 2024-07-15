@@ -33,8 +33,8 @@ const SignIn = () => {
                     body: JSON.stringify(user)
                 })
                 .then(res => res.json())
-                .then(data => {
-                    console.log(data);
+                .then(() => {
+                    // console.log(data);
                 });
 
                 toast.success('Sign in Successful!', {
